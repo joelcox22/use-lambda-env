@@ -3,5 +3,6 @@ module.exports = {
     '^.+\\.ts$': 'ts-jest'
   },
   testPathIgnorePatterns: ['/node_modules/', '/lib/'],
-  collectCoverageFrom: ['src/*']
+  collectCoverageFrom: ['src/*'],
+  setupFiles: ['./jest.setup-env.js']
 }
