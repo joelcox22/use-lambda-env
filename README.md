@@ -14,6 +14,12 @@ use-lambda-env --region ap-southeast-2 your-function-name node index.js
 
 I'd recommend putting the above in a script in package.json, so that developers don't need to remember it, and so you can update the function name for all developers easily when needed.
 
+You can also just `show` the environment variables as a JSON blob by doing
+
+```bash
+use-lambda-env show --region ap-southeast-2 your-function-name
+```
+
 ## Contributing
 
 This repository uses `semantic-release`. Please use the [semantic commit message format] for any contributions.

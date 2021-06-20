@@ -1,7 +1,7 @@
 import * as cp from 'child_process'
 import * as lambda from '@aws-sdk/client-lambda'
 
-export async function useLambdaEnv (functionName: string, command: string[], region?: string): Promise<never> {
+async function getLambdaEnv (functionName: string, region?: string): Promise<NodeJS.ProcessEnv> {
   const clientOptions: lambda.LambdaClientConfig = {}
   if (typeof region === 'string') {
     clientOptions.region = region
@@ -17,16 +17,21 @@ export async function useLambdaEnv (functionName: string, command: string[], reg
     throw new Error(err)
   }
 
-  const env: NodeJS.ProcessEnv = {
-    AWS_REGION: region ?? process.env.AWS_REGION,
-    ...process.env,
-    ...(data.Configuration?.Environment?.Variables ?? {})
+  return {
+    AWS_REGION: region,
+    ...(data.Configuration?.Environment?.Variables)
   }
+}
 
+export async function useLambdaEnv (functionName: string, command: string[], region?: string): Promise<never> {
   const result = cp.spawnSync(command[0], command.slice(1), {
     stdio: 'inherit',
-    env
+    env: await getLambdaEnv(functionName, region)
   })
-
   process.exit(result.status ?? 1)
+}
+
+export async function showLambdaEnv (functionName: string, region?: string): Promise<never> {
+  console.log(await getLambdaEnv(functionName, region))
+  process.exit(0)
 }

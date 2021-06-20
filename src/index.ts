@@ -4,4 +4,9 @@
 
 import { cli } from './cli'
 
-cli.parse()
+try {
+  cli.parse()
+} catch (err) {
+  console.log(err.message)
+  process.exit(1)
+}
