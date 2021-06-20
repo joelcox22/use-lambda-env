@@ -24,7 +24,8 @@ use-lambda-env show --region ap-southeast-2 your-function-name
 
 This repository uses `semantic-release`. Please use the [semantic commit message format] for any contributions.
 
-Code style / formatting is handled by [ts-standard] - please run `npm run lint:fix` to auto-fix your code before committing.
+Code style / formatting is handled by [ts-standard] - please run `npm run lint:fix` to auto-fix your code before committing, or install [StandardJS - JavaScript Standard Style] VS code plugin to auto-fix every time you save.
 
 [semantic commit message format]: https://github.com/semantic-release/semantic-release#commit-message-format
 [ts-standard]: https://github.com/standard/ts-standard
+[StandardJS - JavaScript Standard Style]: https://marketplace.visualstudio.com/items?itemName=chenxsan.vscode-standardjs
