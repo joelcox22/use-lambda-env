@@ -2,11 +2,11 @@
 
 // istanbul ignore file
 
-import { cli } from './cli'
+import { cli } from './cli';
 
 try {
-  cli.parse()
+  cli.parse();
 } catch (err) {
-  console.log(err.message)
-  process.exit(1)
+  if (err instanceof Error) console.log(err.message);
+  process.exit(1);
 }

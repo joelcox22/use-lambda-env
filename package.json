@@ -2,17 +2,18 @@
   "name": "use-lambda-env",
   "version": "0.0.0",
   "description": "Run a process with environment variables from an AWS Lambda function",
+  "private": false,
   "main": "index.js",
-  "bin": {
-    "use-lambda-env": "./lib/index.js"
-  },
   "scripts": {
-    "build": "tsc && chmod +x lib/index.js && rm lib/*.test.js",
-    "test": "jest --coverage",
-    "tdd": "jest --watchAll",
-    "lint": "ts-standard .",
-    "lint:fix": "ts-standard --fix"
+    "build": "projen build",
+    "lint": "projen lint",
+    "lint:fix": "projen lint:fix",
+    "prepare": "husky install",
+    "tdd": "jest --watchAll --testPathIgnorePatterns cdk",
+    "test": "projen test",
+    "update-boilerplate": "projen update-boilerplate"
   },
+  "repository": "https://github.com/joelcox22/use-lambda-env",
   "keywords": [],
   "author": "Joel Cox <joel@pinecodes.com>",
   "license": "ISC",
@@ -21,18 +22,64 @@
     "cac": "^6.7.3"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.23",
-    "jest": "^27.0.4",
+    "@commitlint/config-conventional": "^13.0.0",
+    "@joelcox22/boilerplate": "1.4.1",
+    "@semantic-release/changelog": "^5.0.0",
+    "@semantic-release/git": "^9.0.0",
+    "@types/jest": "^27.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.0.0",
+    "commitlint": "^13.0.0",
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^8.0.0",
+    "eslint-config-standard-with-typescript": "^20.0.0",
+    "eslint-plugin-import": "^2.0.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-promise": "^5.0.0",
+    "git-cz": "^4.0.0",
+    "husky": "^7.0.0",
+    "jest": "^27.0.0",
     "nock": "^13.1.0",
-    "semantic-release": "^17.4.4",
-    "ts-jest": "^27.0.3",
+    "prettier": "^2.0.0",
+    "semantic-release": "^17.0.0",
+    "ts-jest": "^27.0.0",
     "ts-node": "^10.0.0",
     "ts-standard": "^10.0.0",
-    "typescript": "^4.3.4"
+    "typescript": "^4.0.0"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      [
+        "@semantic-release/git",
+        {
+          "message": "chore(release): ${nextRelease.version} [skip ci]"
+        }
+      ],
+      "@semantic-release/github"
+    ]
+  },
+  "bin": {
+    "use-lambda-env": "lib/index.ts"
   },
   "files": [
     "lib",
     "README.md"
-  ],
-  "repository": "https://github.com/joelcox22/use-lambda-env"
+  ]
 }
