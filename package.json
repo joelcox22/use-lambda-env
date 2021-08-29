@@ -1,6 +1,6 @@
 {
   "name": "use-lambda-env",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Run a process with environment variables from an AWS Lambda function",
   "private": false,
   "main": "index.js",
