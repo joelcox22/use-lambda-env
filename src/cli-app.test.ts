@@ -1,4 +1,4 @@
-import { cli } from './cli';
+import { cli } from './cli-app';
 import * as useLambdaEnv from './use-lambda-env';
 
 const use = jest.spyOn(useLambdaEnv, 'useLambdaEnv');

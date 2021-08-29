@@ -7,9 +7,6 @@
           "exec": "tsc"
         },
         {
-          "exec": "rm -rf lib/*.test.js lib/*.test.d.ts"
-        },
-        {
           "exec": "chmod +x lib/cli.js"
         }
       ]
