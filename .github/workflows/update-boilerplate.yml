@@ -34,3 +34,6 @@ jobs:
           boilerplate"'
         env:
           GITHUB_TOKEN: ${{ secrets.BOILERPLATE_GH_TOKEN }}
+      - run: gh pr merge --auto
+        env:
+          GITHUB_TOKEN: ${{ secrets.BOILERPLATE_GH_TOKEN }}
