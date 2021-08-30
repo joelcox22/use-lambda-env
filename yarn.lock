@@ -1258,10 +1258,10 @@
     "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
-"@joelcox22/boilerplate@1.4.15":
-  version "1.4.15"
-  resolved "https://npm.pkg.github.com/download/@joelcox22/boilerplate/1.4.15/8fce25ca035a4f130e5eec994b27649767ee70dc3f733853ccb53c7e9bf47fed#37c8d091507883ff275f9c90f28ed829f85fe1c9"
-  integrity sha512-8rxqC/fRCwiM4FeHsII/9JwydQhU3TLVcYHbu0/l1qSrK5wdTCv8A4RVe3dXN/HT+jU1GQbRusP1ypofLwPcQw==
+"@joelcox22/boilerplate@1.4.16":
+  version "1.4.16"
+  resolved "https://npm.pkg.github.com/download/@joelcox22/boilerplate/1.4.16/78ed0cb491c19bb6773c31a76b89732bd4392f4c1b8c7bbaca9aa88b56685ee2#57a3467be82a3b8b872a7191575191c0831be768"
+  integrity sha512-GUF3mGXZqNOYDPNYF3UyeiriAe3NhR5Bg9WR5XfSYQtntkrwb3hg/izuXVX4EqS5IxvOqn3t8t/iCZDK58E6ng==
   dependencies:
     app-root-path "^3.0.0"
     projen "^0.27.32"
