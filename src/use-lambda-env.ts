@@ -28,7 +28,10 @@ async function getLambdaEnv(functionName: string, region?: string): Promise<Node
 export async function useLambdaEnv(functionName: string, command: string[], region?: string): Promise<never> {
   const result = cp.spawnSync(command[0], command.slice(1), {
     stdio: 'inherit',
-    env: await getLambdaEnv(functionName, region),
+    env: {
+      ...process.env,
+      ...(await getLambdaEnv(functionName, region)),
+    },
   });
   process.exit(result.status ?? 1);
 }
