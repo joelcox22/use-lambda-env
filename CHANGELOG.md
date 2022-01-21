@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/joelcox22/use-lambda-env/compare/v1.1.2...v1.1.3) (2022-01-21)
+
+
+### Bug Fixes
+
+* keep all local environment variables ([de00637](https://github.com/joelcox22/use-lambda-env/commit/de006377954e8b7902451be6553c9a263fae9ada))
+
 ## [1.1.2](https://github.com/joelcox22/use-lambda-env/compare/v1.1.1...v1.1.2) (2021-08-29)
 
 
