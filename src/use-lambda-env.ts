@@ -1,7 +1,7 @@
 import * as cp from 'child_process';
 import * as lambda from '@aws-sdk/client-lambda';
 
-async function getLambdaEnv(functionName: string, region?: string): Promise<NodeJS.ProcessEnv> {
+export async function getLambdaEnv(functionName: string, region?: string): Promise<NodeJS.ProcessEnv> {
   const clientOptions: lambda.LambdaClientConfig = {};
   if (typeof region === 'string') {
     clientOptions.region = region;
