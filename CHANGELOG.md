@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/joelcox22/use-lambda-env/compare/v1.1.3...v1.2.0) (2023-03-18)
+
+
+### Features
+
+* export getLambdaEnv function for programattic use ([651d921](https://github.com/joelcox22/use-lambda-env/commit/651d921e622788b872a015fcb107a2710eaa271a))
+
 ## [1.1.3](https://github.com/joelcox22/use-lambda-env/compare/v1.1.2...v1.1.3) (2022-01-21)
 
 
